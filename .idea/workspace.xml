@@ -19,7 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b8e82d7-b2b0-4e3c-9e20-e60741e4fb24" name="Default Changelist" comment="update menu items to navigate withRouter HOC" />
+    <list default="true" id="9b8e82d7-b2b0-4e3c-9e20-e60741e4fb24" name="Default Changelist" comment="update menu items to navigate withRouter HOC">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -66,6 +68,7 @@
       <workItem from="1601639696165" duration="6075000" />
       <workItem from="1601728930370" duration="484000" />
       <workItem from="1601730704323" duration="6022000" />
+      <workItem from="1602017345282" duration="368000" />
     </task>
     <task id="LOCAL-00001" summary="update menu items to navigate withRouter HOC">
       <created>1601741558489</created>
@@ -104,6 +107,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="update menu items to navigate withRouter HOC" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="650" y="299" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1602017457623">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="650" y="299" key="#com.intellij.fileTypes.FileTypeChooser/1920.9.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1602017457623" />
     <state x="624" y="206" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1601641604315">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
