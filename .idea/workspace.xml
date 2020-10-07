@@ -20,13 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9b8e82d7-b2b0-4e3c-9e20-e60741e4fb24" name="Default Changelist" comment="update menu items to navigate withRouter HOC">
-      <change afterPath="$PROJECT_DIR$/src/components/collection-preview/collection-preview.component.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/collection-preview/collection-preview.styles.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/shop/shop.component.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/shop/shop.data.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/shop/shop.styles.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/collection-item/collection-item.component.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/collection-item/collection-item.styles.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/collection-preview/collection-preview.component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/collection-preview/collection-preview.component.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/collection-preview/collection-preview.styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/collection-preview/collection-preview.styles.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,6 +77,7 @@
       <workItem from="1601730704323" duration="6022000" />
       <workItem from="1602017345282" duration="368000" />
       <workItem from="1602018737154" duration="1936000" />
+      <workItem from="1602099029733" duration="2414000" />
     </task>
     <task id="LOCAL-00001" summary="update menu items to navigate withRouter HOC">
       <created>1601741558489</created>
@@ -145,10 +144,10 @@
       <screen x="1920" y="9" width="1536" height="832" />
     </state>
     <state x="2181" y="88" key="Vcs.Push.Dialog.v2/1920.9.1536.832/0.0.1920.1040@1920.9.1536.832" timestamp="1601742125141" />
-    <state x="2261" y="188" key="run.anything.popup" timestamp="1601732132597">
+    <state x="2261" y="188" key="run.anything.popup" timestamp="1602100168162">
       <screen x="1920" y="9" width="1536" height="832" />
     </state>
-    <state x="2261" y="188" key="run.anything.popup/1920.9.1536.832/0.0.1920.1040@1920.9.1536.832" timestamp="1601732132597" />
+    <state x="2261" y="188" key="run.anything.popup/1920.9.1536.832/0.0.1920.1040@1920.9.1536.832" timestamp="1602100168162" />
     <state x="702" y="345" key="scopes" timestamp="1601640623232">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
