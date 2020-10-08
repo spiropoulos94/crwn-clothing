@@ -19,7 +19,17 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b8e82d7-b2b0-4e3c-9e20-e60741e4fb24" name="Default Changelist" comment="update menu items to navigate withRouter HOC" />
+    <list default="true" id="9b8e82d7-b2b0-4e3c-9e20-e60741e4fb24" name="Default Changelist" comment="update menu items to navigate withRouter HOC">
+      <change afterPath="$PROJECT_DIR$/.idea/rcc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/crown.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/header/header.component.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/header/header.styles.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,7 +46,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1iJxCYK9BGa21FOZzhxTTmoPTBP" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -48,12 +58,16 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Nikos Sp\Documents\GitHub\crwn-clothing\src\assets" />
       <recent name="C:\Users\n.spiropoulos\Documents\GitHub\crwn-clothing\src\pages\homepage" />
     </key>
   </component>
@@ -72,6 +86,7 @@
       <workItem from="1602017345282" duration="368000" />
       <workItem from="1602018737154" duration="1936000" />
       <workItem from="1602099029733" duration="2647000" />
+      <workItem from="1602177834816" duration="3707000" />
     </task>
     <task id="LOCAL-00001" summary="update menu items to navigate withRouter HOC">
       <created>1601741558489</created>
@@ -138,6 +153,10 @@
       <screen x="1920" y="9" width="1536" height="832" />
     </state>
     <state x="2181" y="88" key="Vcs.Push.Dialog.v2/1920.9.1536.832/0.0.1920.1040@1920.9.1536.832" timestamp="1601742125141" />
+    <state x="2329" y="87" width="718" height="668" key="find.popup" timestamp="1602180754665">
+      <screen x="1920" y="9" width="1536" height="832" />
+    </state>
+    <state x="2329" y="87" width="718" height="668" key="find.popup/1920.9.1536.832/0.0.1920.1040@1920.9.1536.832" timestamp="1602180754665" />
     <state x="2261" y="188" key="run.anything.popup" timestamp="1602100168162">
       <screen x="1920" y="9" width="1536" height="832" />
     </state>
@@ -146,9 +165,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="702" y="345" key="scopes/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601640623232" />
-    <state x="539" y="5" width="840" height="1034" key="search.everywhere.popup" timestamp="1601644298519">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="2351" y="13" width="840" height="828" key="search.everywhere.popup" timestamp="1602180711776">
+      <screen x="1920" y="9" width="1536" height="832" />
     </state>
     <state x="539" y="5" width="840" height="1034" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601644298519" />
+    <state x="2351" y="13" width="840" height="828" key="search.everywhere.popup/1920.9.1536.832/0.0.1920.1040@1920.9.1536.832" timestamp="1602180711776" />
   </component>
 </project>
