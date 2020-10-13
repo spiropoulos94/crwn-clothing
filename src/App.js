@@ -30,13 +30,20 @@ class App extends React.Component {
         })
     }
 
-    componentWillUnmount() {
+    //the following is test code
+
+    unsub(){
         this.unsubscribeFromAuth();
     }
+
+    // componentWillUnmount() {
+    //     this.unsubscribeFromAuth();
+    // }
 
     render() {
         return (
             <div>
+                <button onClick={this.unsub}>nikos</button>
                 <Header/>
                 <Switch>
                     <Route exact path='/' component={HomePage}/>
