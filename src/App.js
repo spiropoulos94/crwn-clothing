@@ -30,30 +30,21 @@ class App extends React.Component {
         })
     }
 
-    //the following is test code
-
-    //  unsub = () => {
-    //     this.unsubscribeFromAuth();
-    //     console.log("user unsubscribed")
-    // }
-
-      componentWillUnmount() {
+    componentWillUnmount() {
           this.unsubscribeFromAuth();
-          console.log("user unsigned")
-      }
+          console.log("subscription ended")
+    }
 
     render() {
         return (
             <div>
-                <button onClick={this.unsub}>nikos</button>
-                <Header/>
+                <Header currentUser={this.state.currentUser} />
                 <Switch>
                     <Route exact path='/' component={HomePage}/>
                     <Route path='/shop' component={ShopPage}/>
                     <Route path='/signin' component={SignInAndSignUpPage}/>
                 </Switch>
             </div>
-
         );
     }
 }
