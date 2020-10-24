@@ -24,6 +24,11 @@ class App extends React.Component {
     unsubscribeFromAuth = null;
 
     componentDidMount() {
+
+        //to onAuthStateChanged pairnei ws argument mia function kai kanei subscribe se aythn etsi wste na thn
+        // trexei se kathe state change.Meta kanei return mia alli function h opoia otan treksei stamataei to
+        // subscribe sthn prwth function pou perasame san argument.
+
          this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
             this.setState({currentUser : user})
             console.log(user, "is logged in")

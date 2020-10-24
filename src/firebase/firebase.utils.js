@@ -24,7 +24,9 @@ const provider = new firebase.auth.GoogleAuthProvider();
 provider.setCustomParameters({prompt:'select_account'});
 
 export const signInWithGoogle = () => {
+    //anti gia firebase.auth().signInWithPopup(provider) [thele na kanei method chaining mallon]
     auth.signInWithPopup(provider)
 }
+
 
 export default firebase;
