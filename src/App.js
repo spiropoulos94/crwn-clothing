@@ -5,7 +5,7 @@ import HomePage from "./pages/homepage/homepage.component";
 import ShopPage from "./pages/shop/shop.component";
 import Header from "./components/header/header.component";
 import SignInAndSignUpPage from "./pages/sign-in-and-sign-up/sign-in-and-sign-up.component";
-import {auth} from"./firebase/firebase.utils";
+import {auth, createUserProfileDocument} from"./firebase/firebase.utils";
 
 
 class App extends React.Component {
@@ -29,9 +29,10 @@ class App extends React.Component {
         // trexei se kathe state change.Meta kanei return mia alli function h opoia otan treksei stamataei to
         // subscribe sthn prwth function pou perasame san argument.
 
-         this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
+         this.unsubscribeFromAuth = auth.onAuthStateChanged(async user => {
             this.setState({currentUser : user})
-            console.log(user, "is logged in")
+             createUserProfileDocument(user)
+            // console.log(user, "is logged in")
         })
     }
 

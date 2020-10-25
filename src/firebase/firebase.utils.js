@@ -1,6 +1,7 @@
 import firebase from "firebase/app";  //apo edw epilegei to utility library
 import 'firebase/firestore';          //apo edw dialegei poia utils tha parei apo to firebase
-import 'firebase/auth';               //(edw ekane import to.auth method)
+import 'firebase/auth';
+import {onLog} from "firebase";               //(edw ekane import to.auth method)
 
 const config = {
     apiKey: "AIzaSyCGmcpNZHHfeZ7NpyYvrVycp3oVzvelDf0",
@@ -11,6 +12,21 @@ const config = {
     messagingSenderId: "802797109886",
     appId: "1:802797109886:web:6ed42fffe637ed87950e2f",
     measurementId: "G-V9LZPEG6ME"
+}
+
+export const createUserProfileDocument = async (userAuth, addtionalData) => {
+    if (!userAuth) return;
+
+    //i compared the user i manually added with the user that signed in to spot differences in their snapshots
+
+    const userRef = firestore.doc(`users/5qz0QXJT2td01YL5OVFD`);
+    const userRef2 = firestore.doc(`users/${userAuth.uid}`);
+
+    const snapshot = await userRef.get();
+    const snapshot2 = await userRef2.get();
+
+     console.log(snapshot,'yihua fake user')
+    console.log(snapshot2,'signed in user')
 }
 
 firebase.initializeApp(config);
