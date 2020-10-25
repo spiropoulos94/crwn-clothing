@@ -19,6 +19,9 @@ export const createUserProfileDocument = async (userAuth, addtionalData) => {
 
     //i compared the user i manually added with the user that signed in to spot differences in their snapshots
 
+    //the folowing user ref variable finds the 'leather jacket' product inside cartItems collection of selected user
+    //const userRef = firestore.doc(`users/5qz0QXJT2td01YL5OVFD/cartItems/hye2IT4WrVZn8tmX0PBQ`);
+
     const userRef = firestore.doc(`users/5qz0QXJT2td01YL5OVFD`);
     const userRef2 = firestore.doc(`users/${userAuth.uid}`);
 
