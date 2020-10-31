@@ -26,12 +26,11 @@ export const createUserProfileDocument = async (userAuth, addtionalData) => {
     const userRef = firestore.doc(`users/${userAuth.uid}`);
     const snapshot = await userRef.get();
     // me to .data() exeis prosvasi sta data tou snapshot
-    const data =  snapshot.data()
+    // const data =  snapshot.data()
 
     // console.log(snapshot,'yihua fake user')
     console.log('signed in user ref', userRef )
     console.log('signed in user snapshot', snapshot )
-    console.log('signed in user data', data)
 
     if (!snapshot.exists) {
         const {displayName, email} = userAuth;
