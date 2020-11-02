@@ -44,7 +44,6 @@ export const createUserProfileDocument = async (userAuth, addtionalData) => {
                 createdAt,
                 ...addtionalData
             })
-
         } catch (error) {
             console.log('error creating user', error.message)
         }
@@ -63,7 +62,7 @@ const provider = new firebase.auth.GoogleAuthProvider();
 provider.setCustomParameters({prompt: 'select_account'});
 
 export const signInWithGoogle = () => {
-    //anti gia firebase.auth().signInWithPopup(provider) [thele na kanei method chaining mallon]
+    //anti gia firebase.auth().signInWithPopup(provider) [thelei na kanei method chaining mallon]
     auth.signInWithPopup(provider)
 }
 
