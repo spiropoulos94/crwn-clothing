@@ -29,8 +29,8 @@ export const createUserProfileDocument = async (userAuth, addtionalData) => {
     // const data =  snapshot.data()
 
     // console.log(snapshot,'yihua fake user')
-    console.log('signed in user ref', userRef )
-    console.log('signed in user snapshot', snapshot )
+    //console.log('signed in user ref', userRef )
+    //console.log('signed in user snapshot', snapshot )
 
     if (!snapshot.exists) {
         const {displayName, email} = userAuth;
