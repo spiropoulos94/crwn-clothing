@@ -13,45 +13,34 @@ const config = {
     measurementId: "G-V9LZPEG6ME"
 }
 
+firebase.initializeApp(config);
+
+
 export const createUserProfileDocument = async (userAuth, additionalData) => {
     if (!userAuth) return;
-    //the folowing item ref variable finds the 'leather jacket' product inside cartItems collection of selected
-    // user
-    //const item ref  = firestore.doc(`users/5qz0QXJT2td01YL5OVFD/cartItems/hye2IT4WrVZn8tmX0PBQ`);
-
-    //using ref we tell firebase either to save data on this location or get data from there. no actual data exist there
-    //it has only properies that tell us details about it and the .get() method used to take the snapshot of it,
-    // which contains the actual data
 
     const userRef = firestore.doc(`users/${userAuth.uid}`);
-    const snapshot = await userRef.get();
-    // me to .data() exeis prosvasi sta data tou snapshot
-    // const data =  snapshot.data()
 
-    // console.log(snapshot,'yihua fake user')
-    //console.log('signed in user ref', userRef )
-    //console.log('signed in user snapshot', snapshot )
+    const snapShot = await userRef.get();
 
-    if (!snapshot.exists) {
-        const {displayName, email} = userAuth; //to userAuth exei apo mono tou displayName & email properties
+    if (!snapShot.exists) {
+        const { displayName, email } = userAuth;
         const createdAt = new Date();
-
         try {
-            await userRef.set({  //gia na prosthesoume/afairesoume/tropopoihsoume dedomena xrisimopoioume panta to
-                                 // Ref kai oxi to snapshot! ekei yparxoun ta .get() , .set() klp
+            await userRef.set({
                 displayName,
                 email,
                 createdAt,
                 ...additionalData
-            })
+            });
         } catch (error) {
-            console.log('error creating user', error.message)
+            console.log('error creating user', error.message);
         }
     }
-    return userRef;
-}
 
-firebase.initializeApp(config);
+    return userRef;
+};
+
 
 //gi ayto ekane import panw. gia na parei ta methods
 export const auth = firebase.auth();
