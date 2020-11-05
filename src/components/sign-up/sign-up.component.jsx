@@ -19,19 +19,17 @@ class SignUp extends React.Component {
 
     handleSubmit = async event => {
         event.preventDefault();
-
         const {displayName, email, password, confirmPassword} = this.state;
         if(password !== confirmPassword){
-            alert("passwords dont match!")
+            alert("passwords don't match!")
             return;
         }
-
         try {
-
+            //ousiastika to {user} einai ayto pou ginetai return apo to parakatw function
             const {user} = await auth.createUserWithEmailAndPassword(email, password);
 
+            //to createUseRprofileDocument kanei .set() ta user & display name sto firestore
             await  createUserProfileDocument(user,{displayName})
-
             this.setState(
                 {
                     displayName: "",
@@ -40,7 +38,6 @@ class SignUp extends React.Component {
                     confirmPassword: ""
                 }
             )
-
         }
         catch (error){
             console.error(error)

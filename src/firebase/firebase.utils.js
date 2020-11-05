@@ -33,7 +33,7 @@ export const createUserProfileDocument = async (userAuth, addtionalData) => {
     //console.log('signed in user snapshot', snapshot )
 
     if (!snapshot.exists) {
-        const {displayName, email} = userAuth;
+        const {displayName, email} = userAuth; //to userAuth exei apo mono tou displayName & email properties
         const createdAt = new Date();
 
         try {
