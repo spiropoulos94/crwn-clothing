@@ -13,7 +13,7 @@ const config = {
     measurementId: "G-V9LZPEG6ME"
 }
 
-export const createUserProfileDocument = async (userAuth, addtionalData) => {
+export const createUserProfileDocument = async (userAuth, additionalData) => {
     if (!userAuth) return;
     //the folowing item ref variable finds the 'leather jacket' product inside cartItems collection of selected
     // user
@@ -42,7 +42,7 @@ export const createUserProfileDocument = async (userAuth, addtionalData) => {
                 displayName,
                 email,
                 createdAt,
-                ...addtionalData
+                ...additionalData
             })
         } catch (error) {
             console.log('error creating user', error.message)
