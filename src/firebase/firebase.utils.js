@@ -27,6 +27,8 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
         const { displayName, email } = userAuth;
         const createdAt = new Date();
         try {
+            // sto loginWithgoogle yo auth exei displayName property, enw sto loginwithEmail oxi. gi ayto vazoume di
+            // displayName value apo to input san additionalData ;)
             await userRef.set({
                 displayName,
                 email,
