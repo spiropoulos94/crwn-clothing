@@ -27,10 +27,14 @@ class SignUp extends React.Component {
         }
         try {
             //ousiastika to {user} einai ayto pou ginetai return apo to parakatw function
+            //** pairnei to email kai to password kai trexei to akoloutho method auth.createUserWithEmailAndPassword(email, password)
             const {user} = await auth.createUserWithEmailAndPassword(email, password);
+            // console.log(user, user.email, user.password, user.displayName)
 
-            //to createUseRprofileDocument kanei .set() ta user & display name sto firestore
+            //** se oti tou gyrisei, prosthetei to display name kai trexei to  createUserProfileDocument(user,{displayName})
+            //to createUseRprofileDocument kanei .set() ta user(email and password) & display name sto firestore
             await  createUserProfileDocument(user,{displayName})
+
             this.setState(
                 {
                     displayName: "",
@@ -66,7 +70,7 @@ class SignUp extends React.Component {
                     <FormInput required type="password"  label="Password" name="password" value={password} onChange={this.handleChange} />
                     <FormInput required type="password"  label="Confirm Password" name="confirmPassword" value={confirmPassword} onChange={this.handleChange} />
 
-                    <CustomButton type="submit">SIGN UP</CustomButton>
+                    <CustomButton  type="submit">SIGN UP</CustomButton>
                 </form>
             </div>
         );

@@ -28,6 +28,9 @@ class App extends React.Component {
         // trexei se kathe state change.Meta kanei return mia alli function h opoia otan treksei stamataei to
         // subscribe sthn prwth function pou perasame san argument.
          this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
+             // console.log('userAuth', userAuth, userAuth.displayName, userAuth.email )
+
+             //an yparxei userAuth, diladi an yparxei authenticated xristis
             if (userAuth){
                 const userRef = await createUserProfileDocument(userAuth);
                 // console.log(userAuth.email, userAuth.name)
@@ -42,8 +45,9 @@ class App extends React.Component {
                 })
             } else {
                 this.setState({
-                    currentUser : userAuth
+                    currentUser : userAuth //το οποιο userAuth einai null, ara set currentUser = null
                 })
+                console.log(this.state)
             }
         })
 
