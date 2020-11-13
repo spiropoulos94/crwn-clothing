@@ -9,11 +9,10 @@ import HomePage from "./pages/homepage/homepage.component";
 import ShopPage from "./pages/shop/shop.component";
 import Header from "./components/header/header.component";
 import SignInAndSignUpPage from "./pages/sign-in-and-sign-up/sign-in-and-sign-up.component";
-import {auth, createUserProfileDocument} from"./firebase/firebase.utils";
+import {auth, createUserProfileDocument} from "./firebase/firebase.utils";
 
 
 class App extends React.Component {
-
 
 
     // to method  auth.onAuthStateChanged returns   !>>>> firebase.Unsubscribe <<<<!
@@ -22,42 +21,39 @@ class App extends React.Component {
     unsubscribeFromAuth = null;
 
     componentDidMount() {
-        const {setCurrentUser} = this.props
+        const {setCurrentUser} = this.props;
 
 
         //to onAuthStateChanged pairnei ws argument mia function kai kanei subscribe se aythn etsi wste na thn
         // trexei se kathe state change.Meta kanei return mia alli function h opoia otan treksei stamataei to
         // subscribe sthn prwth function pou perasame san argument.
-         this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
-             // console.log('userAuth', userAuth, userAuth.displayName, userAuth.email )
-
-             //an yparxei userAuth, diladi an yparxei authenticated xristis
-            if (userAuth){
+        this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
+            // console.log('userAuth', userAuth, userAuth.displayName, userAuth.email )
+            //an yparxei userAuth, diladi an yparxei authenticated xristis
+            if (userAuth) {
                 const userRef = await createUserProfileDocument(userAuth);
-                // console.log(userAuth.email, userAuth.name)
+
                 userRef.onSnapshot(snapshot => {
+                    console.log("runs setCurrent user on snapshot") // this runs second
                     setCurrentUser({
-                        currentUser:{
-                            id : snapshot.id,
-                            ...snapshot.data()
-                        }
+                        id: snapshot.id,
+                        ...snapshot.data()
                     });
-                    console.log(this.state)
-                })
-            } else {
-                setCurrentUser({
-                    currentUser : userAuth //το οποιο userAuth einai null, ara set currentUser = null
-                })
-                // console.log(this.state)
+                });
             }
+
+            console.log("runs setCurrent user on userAuth = null prin to snapshot") //this runs first
+                setCurrentUser(userAuth);
+                // console.log(this.state)
+
         })
 
     }
 
     componentWillUnmount() {
-          this.unsubscribeFromAuth();
-          console.log("subscription ended")
-    }  
+        this.unsubscribeFromAuth();
+        console.log("subscription ended")
+    }
 
     render() {
         return (
@@ -72,6 +68,11 @@ class App extends React.Component {
         );
     }
 }
+
+
+//In addition to reading the state, container components can dispatch actions. In a similar fashion, you can define a
+// function called mapDispatchToProps() that receives the dispatch() method and returns callback props
+// that you want to inject into the presentational component.
 
 const mapDispatchToProps = dispatch => ({
     setCurrentUser: user => dispatch(setCurrentUser(user))
