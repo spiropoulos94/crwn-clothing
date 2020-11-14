@@ -38,8 +38,6 @@ const Header = ({currentUser, hidden}) => {
 };
 
 
-//to state edw katw einai to rootReducer
-//pare to state, diladi to rootReducer kai ftiakse ena prop currentUser sto opoio tha peraseis to state.user.currentUser
 //to enhanced component tha exei san props to currentUser ;)
 const mapStateToProps = ({user:{currentUser},cart:{hidden}}) => ({
     currentUser,

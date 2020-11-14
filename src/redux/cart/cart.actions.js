@@ -6,6 +6,8 @@ export const toggleCartHidden = () => ({
     // hidden mesa sto cartReducer. den tou pernaei kapoio payload
 })
 
+
+//addItem action creator. It takes an item and returns an action which has the given item as payload.
 export const addItem = item => ({
     type: CartActionTypes.ADD_ITEM,
     payload: item
