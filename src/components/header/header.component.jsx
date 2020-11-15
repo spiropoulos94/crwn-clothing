@@ -6,6 +6,11 @@ import {connect} from "react-redux";
 import CartIcon from "../cart-icon/cart-icon.component";
 import CartDropdown from "../cart-dropdown/cart-dropdown.component";
 
+import {createStructuredSelector} from 'reselect';
+
+import {selectCurrentUser} from  '../../redux/user/user.selectors'
+import {selectCartHidden} from "../../redux/cart/cart.selectors";
+
 
 import {ReactComponent as Logo} from "../../assets/crown.svg";
 import {auth} from "../../firebase/firebase.utils";
@@ -39,9 +44,9 @@ const Header = ({currentUser, hidden}) => {
 
 
 //to enhanced component tha exei san props to currentUser ;)
-const mapStateToProps = ({user:{currentUser},cart:{hidden}}) => ({
-    currentUser,
-    hidden
+const mapStateToProps = createStructuredSelector({
+    currentUser: selectCurrentUser,
+    hidden : selectCartHidden
     //to current user tha exei value rootReducer => user property => userReducer => state tou userReducer =>
     // state.currentUser
  })

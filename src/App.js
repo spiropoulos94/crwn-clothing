@@ -4,6 +4,10 @@ import {Route, Switch, Redirect} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {setCurrentUser} from "./redux/user/user.actions";
 
+import {createStructuredSelector} from "reselect";
+
+import {selectCurrentUser} from './redux/user/user.selectors';
+
 import './App.css';
 import HomePage from "./pages/homepage/homepage.component";
 import ShopPage from "./pages/shop/shop.component";
@@ -74,8 +78,10 @@ class App extends React.Component {
 // function called mapDispatchToProps() that receives the dispatch() method and returns callback props
 // that you want to inject into the presentational component.
 
-const mapStateToProps = ({user}) => ({
-    currentUser : user.currentUser
+const mapStateToProps = createStructuredSelector({
+    currentUser : selectCurrentUser
+    //anti na grapseis selectCurrentUser(state) grafeis mono selectCurrentUser, kai to state pernaei aytomata mesw
+    // to createStructuredSelector
 })
 
 const mapDispatchToProps = dispatch => ({
