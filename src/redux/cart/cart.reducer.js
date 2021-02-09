@@ -19,6 +19,7 @@ const INITIAL_STATE = {
             return {
                 ...state,
                 cartItems: addItemToCart(state.cartItems, action.payload)
+
             }
 
         case CartActionTypes.REMOVE_ITEM :
