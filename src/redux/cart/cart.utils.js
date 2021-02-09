@@ -1,4 +1,5 @@
 export const addItemToCart = (cartItems, cartItemToAdd) => {
+    console.log("cartItems", cartItems) //cart items returns undefined
     const existingCartItem = cartItems.find(
         cartItem => cartItem.id === cartItemToAdd.id
     );
@@ -15,7 +16,6 @@ export const addItemToCart = (cartItems, cartItemToAdd) => {
 };
 
 export const removeItemFromCart = (cartItems, cartItemToRemove) => {
-
     const existingCartItem = cartItems.find(
         cartItem => cartItem.id === cartItemToRemove.id
     );
