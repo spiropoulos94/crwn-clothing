@@ -1,6 +1,9 @@
 import {createSelector} from "reselect";
 
+//Input selector : doesn't use createSelector
 const selectCart = state => state.cart
+
+//Output selector : uses createSelector & input selectors
 
 export const selectCartItems = createSelector(   //because we used createSelector, then our selector is memoized
     [selectCart],
