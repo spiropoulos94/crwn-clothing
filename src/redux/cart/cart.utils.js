@@ -1,4 +1,4 @@
-export const addItemToCart = (cartItems=[], cartItemToAdd) => {
+export const addItemToCart = (cartItems, cartItemToAdd) => {
     console.log("cartItems", cartItems) //cart items returns undefined
 
     const existingCartItem = cartItems.find(
