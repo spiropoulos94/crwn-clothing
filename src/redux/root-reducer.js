@@ -10,7 +10,7 @@ import cartReducer from "./cart/cart.reducer";
 const persistConfig = {
     key : "root", //dilwnei o poio shmeio tou reducer theloume na kanoume store. Edw ta theloume ola ara root
     storage,
-    whitelist:["cart"]
+    whitelist:["cart"] // o logos pou vazei mono to cart reducer, einai oti o allos reducer orizetai apo to authentication tis firebase
 }
 
 const rootReducer =  combineReducers({
