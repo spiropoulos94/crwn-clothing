@@ -6,6 +6,8 @@ import storage from "redux-persist/lib/storage"; //this imports the local storag
 
 import userReducer from "./user/user.reducer";
 import cartReducer from "./cart/cart.reducer";
+import directoryReducer from "./directory/directory.reducer";
+import shopReducer from "./shop/shop.reducer";
 
 const persistConfig = {
     key : "root", //dilwnei o poio shmeio tou reducer theloume na kanoume store. Edw ta theloume ola ara root
@@ -15,7 +17,9 @@ const persistConfig = {
 
 const rootReducer =  combineReducers({
     user: userReducer,
-    cart:cartReducer
+    cart:cartReducer,
+    directory:directoryReducer,
+    shop: shopReducer
 });
 
 export default persistReducer(persistConfig, rootReducer);
