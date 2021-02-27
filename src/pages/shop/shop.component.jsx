@@ -5,7 +5,11 @@ import "./shop.styles.scss";
 import CollectionsOverview from "../../components/collections-overview/collections-overview.component";
 import CollectionPage from "../collection/collection.component";
 
-import {firestore} from "../../firebase/firebase.utils";
+import connect from "react-redux/lib/connect/connect";
+
+import {updateCollections} from "../../redux/shop/shop.actions"
+
+import {firestore, convertCollectionsSnapshotToMap } from "../../firebase/firebase.utils";
 
 //prokeimenou na deiksume to route pou eimaste twra xisimopoioume to match.path. esi wste se ayto to route na deixeni to synoliko overview
 
@@ -13,10 +17,15 @@ class ShopPage extends React.Component {
     unsubscribeFromSnapshot = null;
 
     componentDidMount() {
+        const { updateCollections } = this.props
         const collectionRef = firestore.collection("collections");
-        collectionRef.onSnapshot()
+        collectionRef.onSnapshot(async snapshot => {
+            // console.log("snapshot", {snapshot})
+            const collectionsMap = convertCollectionsSnapshotToMap(snapshot)
+            // console.log({collectionsMap})
+            updateCollections(collectionsMap)
+        })
 
-        //todo apo edw suunexise
     }
 
     render() {
@@ -30,6 +39,9 @@ class ShopPage extends React.Component {
     }
 }
 
+ const mapDispatchToProps = dispatch => ({
+     updateCollections: collectionsMap => dispatch(updateCollections(collectionsMap))
+ })
 
 
-export default ShopPage;
+export default connect(null, mapDispatchToProps)(ShopPage);

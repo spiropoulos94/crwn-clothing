@@ -27,7 +27,7 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
 
 
     if (!snapShot.exists) {
-        const { displayName, email } = userAuth;
+        const {displayName, email} = userAuth;
         const createdAt = new Date();
         try {
             // sto loginWithgoogle to auth exei displayName property, enw sto loginwithEmail oxi. gi ayto vazoume di
@@ -59,6 +59,24 @@ export const addCollectionAndDocuments = async (collectionKey, objectsToAdd) => 
     return await batch.commit() // me to batch commit feygei to batch request. Epeidh omws gyrnaei promise tha kanoume thn function asynxroni kai to batch commit await(to be resolved)
 }
 
+export const convertCollectionsSnapshotToMap = (collections) => {
+    const transformedCollection = collections.docs.map(doc => {
+        const {title, items} = doc.data();
+        return {
+            routeName: encodeURI(title.toLowerCase()),
+            id: doc.id,
+            title,
+            items
+        }
+
+    })
+    return transformedCollection.reduce((accumulator, collection) => {
+        accumulator[collection.title.toLowerCase()] = collection;  // pairnei ton titlo apo to kathe collection kai ton bazei san
+                                                                    // key sto object, kai tou antistoixei to collection ayto
+        return accumulator;
+    }, {})
+
+}
 
 //gi ayto ekane import panw. gia na parei ta methods
 export const auth = firebase.auth();
