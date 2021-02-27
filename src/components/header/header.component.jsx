@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from "react-router-dom";
 
 import {connect} from "react-redux";
 import CartIcon from "../cart-icon/cart-icon.component";
@@ -13,7 +12,7 @@ import {selectCartHidden} from "../../redux/cart/cart.selectors";
 import {ReactComponent as Logo} from "../../assets/crown.svg";
 import {auth} from "../../firebase/firebase.utils";
 
-import {HeaderContainer, LogoContainer, OptionsContainer, OptionLink, OptionDiv} from "./header.styles";
+import {HeaderContainer, LogoContainer, OptionsContainer, OptionLink} from "./header.styles";
 
 
 const Header = ({currentUser, hidden}) => {
@@ -32,7 +31,7 @@ const Header = ({currentUser, hidden}) => {
                 </OptionLink>
                 {
                     currentUser ?
-                        <OptionDiv onClick={() => auth.signOut()}>SIGN OUT</OptionDiv >
+                        <OptionLink as="div" onClick={() => auth.signOut()}>SIGN OUT</OptionLink >
                         :
                         <OptionLink to="/signin">SIGN IN</OptionLink>
                 }

@@ -25,6 +25,7 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
 
     const snapShot = await userRef.get();
 
+
     if (!snapShot.exists) {
         const { displayName, email } = userAuth;
         const createdAt = new Date();
@@ -44,6 +45,19 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
 
     return userRef;
 };
+
+export const addCollectionAndDocuments = async (collectionKey, objectsToAdd) => {
+    const collectionRef = firestore.collection(collectionKey);
+
+    const batch = firestore.batch();
+
+    objectsToAdd.forEach(obj => {
+        const newDocRef = collectionRef.doc();
+        batch.set(newDocRef, obj)
+    })
+
+    return await batch.commit() // me to batch commit feygei to batch request. Epeidh omws gyrnaei promise tha kanoume thn function asynxroni kai to batch commit await(to be resolved)
+}
 
 
 //gi ayto ekane import panw. gia na parei ta methods

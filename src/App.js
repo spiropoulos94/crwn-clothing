@@ -17,7 +17,6 @@ import {auth, createUserProfileDocument} from "./firebase/firebase.utils";
 import CheckoutPage from "./pages/checkout/checkout.component";
 import TestPage from "./pages/test-page.component";
 
-
 class App extends React.Component {
 
 
@@ -27,7 +26,7 @@ class App extends React.Component {
     unsubscribeFromAuth = null;
 
     componentDidMount() {
-        const {setCurrentUser, currentUser} = this.props;
+        const {setCurrentUser} = this.props;
 
 
         //to onAuthStateChanged pairnei ws argument mia function kai kanei subscribe se aythn etsi wste na thn
@@ -50,7 +49,7 @@ class App extends React.Component {
 
             console.log("runs setCurrent user on userAuth = null prin to snapshot") //this runs first
                 setCurrentUser(userAuth);
-                // console.log(this.state)
+            // addCollectionAndDocuments("collections", collectionsArray.map(({title, items}) => ({title, items})));
 
         })
 
