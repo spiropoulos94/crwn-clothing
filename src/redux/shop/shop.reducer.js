@@ -22,7 +22,6 @@ const INITIAL_STATE = {
                 isFetching: false,
                 collections: action.payload
             };
-
         case shopActionTypes.FETCH_COLLECTIONS_FAILURE :
             return {
                 ...state,
